@@ -7,7 +7,7 @@
 </head>
 <body>
 <form>
-	<h3>로그인</h3>
+	<h3>로그인페이지</h3>
 	<div>ID&nbsp;&nbsp;<input type="text" id="id"></div>
 	<div>PW<input type="text" id="pw"></div>
 	<button>확인</button>
