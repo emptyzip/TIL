@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="username" value="STUDY"/>
+		<property name="password" value="1234"/>
+	</bean>
+<!-- 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource"/>
+    <property name="configLocation"
+            value="classpath:/mybatis-config.xml"></property> configLocation라는 속성 추가 mybatis 설정xml인식
+지금 주석친 이 부분까지 작성하고 2단계 테스트를 진행한다.
+    <property name="mapperLocations" 
+            value="classpath:/mappers/**/*Mapper.xml"></property>mapperLocations라는 속성 추가, 작성된 mappers폴더안에 어떤 폴더이건 관계없이 파일이름이'Mapper.xml'로 끝나면 자동으로 인식, 2단계 테스트를 끝내고 추가한다.
+	</bean>
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+	    <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"/> DB와 연결을 맺고 끊어주는걸 알아서 처리해주는 template
+	</bean> -->
+</beans>
